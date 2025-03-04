@@ -63,4 +63,3 @@ jobs:
           context: app
           push: false
           tags: ghcr.io/${{ github.actor }}/micronaut-app2:1.0-${{ github.sha }},ghcr.io/${{ github.actor }}/micronaut-app2:latest
-        run: bash ci/performance-test.sh
