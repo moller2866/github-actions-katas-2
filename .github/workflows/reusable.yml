@@ -2,7 +2,7 @@ name: Reusable workflow
 on: 
   workflow_call:
     inputs:
-      who-yo-greet:
+      who-to-greet:
         type: string
         description: 'The person to greet'
         required: true
