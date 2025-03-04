@@ -60,4 +60,25 @@ jobs:
           context: app
           push: true
           tags: ghcr.io/${{ github.actor }}/micronaut-app2:1.0-${{ github.sha }},ghcr.io/${{ github.actor }}/micronaut-app2:latest
-
+  Component-test:
+    runs-on: ubuntu-latest
+    needs: [Docker]
+    steps:
+      - name: Download
+        uses: actions/download-artifact@v4
+        with:
+          name: code
+          path: .
+      - name: Execute Test
+        run: bash ci/component-test.sh
+  Performance-test:
+    runs-on: ubuntu-latest
+    needs: [Docker]
+    steps:
+      - name: Download
+        uses: actions/download-artifact@v4
+        with:
+          name: code
+          path: .
+      - name: Execute Test
+        run: bash ci/performance-test.sh
