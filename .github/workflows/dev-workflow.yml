@@ -1,4 +1,4 @@
-name: CI # Main workflow
+name: Dev-CI # Main workflow
 on:
   push:
     branches: 
