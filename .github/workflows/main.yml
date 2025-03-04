@@ -5,6 +5,10 @@ on:
   pull_request:
     branches: [ "main" ]
   workflow_dispatch:
+env:
+  docker_username: ${{ github.actor }} 
+  docker_password: ${{ secrets.GITHUB_TOKEN }}
+  GIT_COMMIT: ${{ github.sha }}
 jobs:
   Build:
     runs-on: ubuntu-latest
