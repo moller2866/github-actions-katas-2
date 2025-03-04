@@ -1,4 +1,4 @@
-name: CI
+name: CI # Main workflow
 on:
   push:
     branches: [ "main" ]
